@@ -1,0 +1,5 @@
+FastAPI is a Python framework.
+It is used to build APIs.
+FastAPI uses Pydantic for validation.
+It provides automatic Swagger documentation.
+FastAPI supports asynchronous programming.

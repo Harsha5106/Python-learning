@@ -1,0 +1,126 @@
+===== ZERO-SHOT =====
+To understand **FastAPI**, it helps to first understand what an **API** is.
+
+Imagine you are at a restaurant.
+*   **You (The Client):** Want some food.
+*   **The Kitchen (The Server):** Has the food and the ingredients.
+*   **The Waiter (The API):** Takes your order, goes to the kitchen, tells them what to do, and brings the food back to you.
+
+An API is simply the "waiter" that allows different pieces of software to talk to each other.
+
+---
+
+### So, what is FastAPI?
+FastAPI is a modern, high-performance tool (a "framework") used to build these "waiters" (APIs) using the **Python** programming language.
+
+It is currently one of the most popular tools for web developers because of three main reasons:
+
+#### 1. It is incredibly "Fast" (Performance)
+The "Fast" in FastAPI isn't just a marketing name. It is one of the fastest Python frameworks available. It performs almost as well as code written in languages like Go or NodeJS, which are known for their speed.
+
+#### 2. It is "Fast" to write (Development Speed)
+FastAPI is designed to help you write code quickly. 
+*   It uses **Type Hints** (a way to tell Python what kind of data you expect, like "this must be a number").
+*   Because it knows what kind of data is coming in, it can automatically catch errors for you. If a user sends text when you asked for a number, FastAPI automatically sends them an error message telling them exactly what they did wrong.
+
+#### 3. It writes the documentation for you
+This is the "magic" feature. Normally, developers have to spend hours writing manuals to explain how their API works. 
+FastAPI looks at your code and **automatically creates an interactive webpage** where you can test your API right in your browser. You don't have to write a single line of manual documentation.
+
+---
+
+### A Simple Example
+If you were to write a basic API in FastAPI, it would look something like this:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+```
+
+1.  **`app = FastAPI()`**: This creates your API "waiter."
+2.  **`@app.get("/")`**: This tells the waiter: "If someone visits the homepage, do this."
+3.  **`return {"Hello": "World"}`**: This is the data the waiter brings back to the user.
+
+### Why choose it over others?
+There are older tools for Python (like Flask or Django), but FastAPI is preferred today because:
+*   **It’s modern:** It handles "async" code (doing multiple things at once) very efficiently.
+*   **It’s smart:** It validates data automatically.
+*   **It’s user-friendly:** Beginners find it much easier to read and debug than older, more complex frameworks.
+
+### The Summary
+If you want to build a backend for a website or an app using Python, **FastAPI is like a high-speed, automated assistant.** It does the heavy lifting, catches your mistakes, and documents your work, leaving you to focus on the actual logic of your application.
+
+===== ONE-SHOT =====
+Question: Explain FastAPI to a beginner in simple words.
+Answer: FastAPI is a tool used by programmers to quickly build web APIs, which are the "messengers" that allow different software applications to talk to each other (like your phone app talking to a server). It is called "Fast" because it is very speedy to run and helps developers write code much faster than older tools.
+
+===== FEW-SHOT =====
+Question: What is FastAPI?
+Answer: FastAPI is a modern framework for building web APIs with Python, designed to be extremely fast and easy to use.
+
+===== COT-STYLE =====
+To explain FastAPI effectively, I have broken down the core concepts that make it unique in the world of web development.
+
+### Key Concepts to Understand
+
+1.  **What is an API?** An API (Application Programming Interface) is essentially a "waiter" for software. It takes a request from a client (like a mobile app or website), tells the server what to do, and brings the response back.
+2.  **What is a Web Framework?** Writing code to handle network requests, security, and data formatting from scratch is exhausting. A framework provides a "skeleton" so you only have to write the logic specific to your app.
+3.  **Asynchronous Programming (`async`/`await`):** This is FastAPI’s superpower. It allows the server to handle thousands of requests simultaneously without "freezing" while waiting for a database to respond.
+4.  **Type Hinting:** FastAPI uses Python’s modern type hints. Instead of guessing if a piece of data is a string or an integer, FastAPI knows exactly what it is, which prevents bugs and helps your code editor provide helpful suggestions.
+5.  **Pydantic:** This is the engine behind FastAPI. It validates data. If a user sends a string where a number is required, FastAPI catches the error and sends an informative message back automatically.
+6.  **Automatic Documentation:** Because FastAPI knows the "types" of your data, it can automatically generate a beautiful, interactive web page (Swagger UI) that lets you testyour API without writing extra code.
+
+---
+
+### What is FastAPI? (The Final Answer)
+
+**FastAPI** is a modern, high-performance web framework for building APIs with Python. It has become one of the most popular tools for backend developers because it is designedto be easy to learn, fast to write, and incredibly efficient at runtime.
+
+#### Why is it special?
+
+*   **Incredible Speed:** It is one of the fastest Python frameworks available, rivaling languages like Go and Node.js in performance because it is built on top of `Starlette` (for web routing) and `Pydantic` (for data validation).
+*   **"Type" Safety:** By using standard Python type hints, your code is much cleaner and easier to debug. If you tell the app to expect an "integer," it will automatically verify that for you.
+*   **Automatic Documentation:** You don't have to write manual documentation. FastAPI looks at your code and automatically generates an interactive documentation page (available at `/docs`) where you can test your API endpoints directly in your browser.
+*   **Developer Friendly:** It is designed to be intuitive. It reduces the amount of "boilerplate" code (repetitive setup code) you need to write, meaning you spend more time building features and less time configuring the server.
+*   **Asynchronous Support:** It natively supports `async` code, which allows your application to remain responsive even when handling heavy traffic or long-running tasks.
+
+#### A Quick Code Example
+You can create a fully functional API in just a few lines of code:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
+```
+
+**In short:** FastAPI is the perfect choice for beginners who want to build professional, high-quality APIs quickly, and for experts who want maximum performance without sacrificing code readability.
+
+===== IMPROVED PROMPT =====
+FastAPI is a modern, high-performance web framework for building APIs with Python based on standard type hints.
+
+### Why use FastAPI?
+*   **Speed:** It is incredibly fast, rivaling frameworks like NodeJS and Go.
+*   **Easy to learn:** If you know basic Python, you already know most of what you need.
+*   **Automatic Docs:** It automatically generates interactive API documentation for you.
+*   **Fewer Bugs:** It uses Python type hints to catch errors before you run your code.
+
+### Simple Example
+This code creates a basic web server that returns a JSON message:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
