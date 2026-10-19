@@ -23,18 +23,14 @@ sentences = [
 
 # sentence transformer from text to vectors 
 from sentence_transformers import SentenceTransformer
-
 model = SentenceTransformer("all-MiniLM-L6-v2")
-
 embeddings = model.encode(sentences)
 
 print(embeddings.shape)
 
 #chromadb importing 
 import chromadb
-
 client = chromadb.Client()
-
 collection = client.create_collection("day8_documents")
 
 collection.add(
@@ -46,7 +42,6 @@ collection.add(
 query = "Which Python technology can I use to build APIs?"
 
 query_embedding = model.encode(query)
-
 results = collection.query(
     query_embeddings=[query_embedding.tolist()],
     n_results=3
