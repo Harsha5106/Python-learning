@@ -1,0 +1,25 @@
+# Day 17: Output Validation and AI Safety Guardrails
+
+## Objective
+Implement output validation and basic AI safety guardrails to improve the reliability of LLM responses.
+
+## Implementation
+1. **Schema validation:** Validates JSON structure, required fields, data types, and confidence-score ranges.
+2. **Regex validation:** Checks whether the confidence field follows the required numeric format.
+3. **Input guardrail:** Blocks selected unsafe requests and rejects queries outside the supported technical scope.
+4. **Output validation:** Rejects malformed JSON, missing fields, unexpected fields, empty answers, and invalid confidence scores.
+5. **Testing and logging:** Runs ten test cases and records expected versus actual outcomes.
+
+## Results
+- Total test cases: 10
+- Expected outcomes matched: 10
+- Unexpected outcomes: 0
+- Valid outputs accepted: Yes
+- Invalid outputs rejected: Yes
+- Out-of-scope requests blocked: Yes
+- Selected unsafe requests blocked: Yes
+
+## Conclusion
+The task demonstrates how schema validation, regular expressions, and basic guardrails can improve LLM application reliability. Invalid responses are rejected before being used by the application, while unsupported or selected unsafe queries are blocked.
+
+**Limitations:** The keyword-based scope filter is a basic demonstration and may incorrectly block valid queries or allow unsupported ones. The unsafe-request patterns are not a comprehensive safety filter. Production systems should use stronger policy checks, broader testing, and appropriate model-level safeguards.
