@@ -2,4 +2,4 @@ __pycache__/
 *.pyc
 .env
 .venv/
-cd.py
+typed_output.txt
